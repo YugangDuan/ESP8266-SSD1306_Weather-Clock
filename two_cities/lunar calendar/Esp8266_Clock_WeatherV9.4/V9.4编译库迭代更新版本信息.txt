@@ -1,0 +1,184 @@
+Executable segment sizes:
+IROM   : 483756          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1396  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 6904  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30648 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 520012 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了38948字节，(47%)的动态内存，余留42972字节局部变量。最大为81920字节。
+
+
+V9.0：1.增加了json反序列化检查，彻底解决因为较长的数据没有反序列检查工作而查找数据失败，导致获取不到返回值，注释掉了农历里面没有使用的变量
+2.注释掉U8g2库，只用SH1106Wire.h库，尽量减少程序大小。由原来的49%到现在的47%
+4.去掉了wifi账号和密码直接烧写模式的代码，只采用了Web配网方式。
+
+Executable segment sizes:
+IROM   : 483724          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1396  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 6972  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30656 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 520048 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了39024字节，(47%)的动态内存，余留42896字节局部变量。最大为81920字节。
+V9.1：修改了零点时农历更新时间逻辑判断，提供了2种方案，备选方案件注释部分。
+
+
+Executable segment sizes:
+IROM   : 486576          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1328  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 3072  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30648 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 518932 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了35048字节，(42%)的动态内存，余留46872字节局部变量。最大为81920字节。
+V9.2：1.去除time.h，完全由NTPClient.h替代。
+2.将字库存储改类型，由动态存储改为flash静态存储，释放更多的SRAM。从编译信息可以看出动态内存由上一版本的47%降到42%。
+3.修改该了UI显示界面，去除日期月/日的显示，由其他UI页面年月日包含，显示界面看起来更加清爽，简洁。
+4.将日期更新部分的内容放在实时天气数据里面获取。
+
+Executable segment sizes:
+IROM   : 488608          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1328  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 3072  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30648 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 520964 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了35048字节，(42%)的动态内存，余留46872字节局部变量。最大为81920字节。
+V9.2.1:1注释掉了没使用到的库：sys/time.h和coredecls.h
+2.新增了一张长沙地标图片显示。
+3.修复一个农历获取数据类型定义的bug。
+
+Executable segment sizes:
+IROM   : 489740          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1332  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 3188  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30672 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 522216 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了35192字节，(42%)的动态内存，余留46728字节局部变量。最大为81920字节。
+V9.3 1：新增一个API接口数据，原来是由3个api接口获取不同的数据，有些数据是共同调用一个api接口数据，由于api数据平台有不可控的因素，为了追求稳定，
+尽量采用有名气的api平台，当前日期改用：http://quan.suning.com/getSysTime.do 苏宁的后台数据，原9.2版本采用和风api接口里面获取，由于天气更新不是实时更新，所以零点时间显示会更新延后，加上之前的时间库函数都没有采用了，所以就必须新增一个当前日期api接口。
+2.对不同数据进行了函数拆分和数据分离。
+主程序函数：
+void drawProgress(OLEDDisplay *display, int percentage, String label);   //提前声明函数
+void updateData(OLEDDisplay *display);//根据millis和设定的时间进行判断更新天气间隔时间
+void Day3updateData(OLEDDisplay *display) ;  //根据millis,3天气象更新
+void NLiupdateData(OLEDDisplay *display);//更新农历设定时间
+void TodayupdateData(OLEDDisplay *display);//更新当天日期设定时间
+void updateDatas(OLEDDisplay *display);//首次更新，重启时更新
+void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawForecast(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawForecastDetails(OLEDDisplay *display, int x, int y, int dayIndex);
+void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
+void setReadyForWeatherUpdate();  //实时天气
+void setReadyForUpdate(); //3天
+void setReadyNLiUpdate(); //农历
+void setReadyTodayUpdate(); //当天日期
+void drawDateTime2(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void five(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void six(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+
+api获取函数以及相关联函数：
+class HeFeng {
+  private:
+    String getMeteoconIcon(String cond_code);
+    String Read_String(int a, int b);
+  public:
+    HeFeng();
+    void doUpdateCurr(CurrentData *data, String HEFENG_KEY, String HEFENG_LOCATION);//获取当前气象数据
+    void doUpdateFore(ForeData *data, String HEFENG_KEY, String HEFENG_LOCATION);//获取三天气象数据
+    void NongLingDate(NongLi_Date *data, String DateAddress);//获取农历
+    void WorkDate(WorkData *data, String WorkDate);//获取当前日期
+Executable segment sizes:
+IROM   : 489740          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27956   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1332  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 3188  ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 30672 )         - zeroed variables      (global, static) in RAM/HEAP 
+使用 1.0  版本的库 ESP8266WiFi 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WiFi 
+使用 1.2  版本的库 ESP8266HTTPClient 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266HTTPClient 
+使用 1.0.0  版本的库 DS18B20 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\DS18B20 
+使用 2.3.5  版本的库 OneWire 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\OneWire 
+使用 1.1.1  版本的库 DNSServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\DNSServer 
+使用 1.0  版本的库 ESP8266WebServer 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\ESP8266WebServer 
+使用 0.15.0-beta  版本的库 CustomWiFiManager 在文件夹： C:\Program Files (x86)\Arduino\libraries\CustomWiFiManager 
+使用 1.0  版本的库 EEPROM 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\EEPROM 
+使用 3.2.0  版本的库 NTPClient 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\NTPClient 
+使用 4.2.0  版本的库 ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays 
+使用 1.0  版本的库 Wire 在文件夹： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\2.7.4\libraries\Wire 
+使用 6.17.3  版本的库 ArduinoJson 在文件夹： C:\Users\Administrator\Documents\Arduino\libraries\ArduinoJson 
+"C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506/bin/xtensa-lx106-elf-size" -A "d:\\arduino\\MyHexDir/Esp8266_Clock_Weather.ino.elf"
+项目使用了 522216 字节，占用了 (49%) 程序存储空间。最大为 1044464 字节。
+全局变量使用了35192字节，(42%)的动态内存，余留46728字节局部变量。最大为81920字节。
+V9.4 修复上一版本更新后，日期API接口获取不到数据的bug。
+
+
+    void Write_String(int a, int b, String str);
+};
+
