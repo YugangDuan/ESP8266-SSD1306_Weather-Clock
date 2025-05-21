@@ -23,7 +23,7 @@
 // const char* WIFI_PWD = "huayun123";
 
 const char* BILIBILIID = "97470772";  //填写你的B站账号
-const char* HEFENG_KEY = "b1f352b58aec4ee89a32321f95388188";//和风天气秘钥
+const char* HEFENG_KEY = "b195388188";//和风天气秘钥
 const char* HEFENG_LOCATION =   "101010700";//城市ID,可到 https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv 查询
 // const char* HEFENG_LOCATION = "auto_ip";
 
