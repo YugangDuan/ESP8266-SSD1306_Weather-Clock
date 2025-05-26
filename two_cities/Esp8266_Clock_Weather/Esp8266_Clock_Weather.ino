@@ -19,8 +19,8 @@
 /***************************
    Begin Settings
  **************************/
-// const char* WIFI_SSID = "Huayun";  //填写你的WIFI名称及密码
-// const char* WIFI_PWD = "huayun123";
+// const char* WIFI_SSID = "";  //填写你的WIFI名称及密码
+// const char* WIFI_PWD = "";
 
 const char* BILIBILIID = "97470772";  //填写你的B站账号
 const char* HEFENG_KEY = "8188";//和风天气秘钥
