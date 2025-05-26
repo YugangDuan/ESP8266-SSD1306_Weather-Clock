@@ -19,19 +19,19 @@
 /***************************
    Begin Settings
  **************************/
-// const char* WIFI_SSID = "Huayun";  //填写你的WIFI名称及密码
-// const char* WIFI_PWD = "huayun123";
+// const char* WIFI_SSID = "";  //填写你的WIFI名称及密码
+// const char* WIFI_PWD = "";
 
 const char* BILIBILIID = "97470772";  //填写你的B站账号
-const char* HEFENG_KEY = "b195388188";//和风天气秘钥
+const char* HEFENG_KEY = "88";//和风天气秘钥
 const char* HEFENG_LOCATION =   "101010700";//城市ID,可到 https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv 查询
 // const char* HEFENG_LOCATION = "auto_ip";
 
 #define TZ              8      // 中国时区为8
 #define DST_MN          0      // 默认为0
 
-const int UPDATE_INTERVAL_SECS = 30 * 60; // 30分钟更新一次天气
-const int UPDATE_CURR_INTERVAL_SECS = 2 * 59; // 2分钟更新一次粉丝数
+const int UPDATE_INTERVAL_SECS = 10 * 60; // 10分钟更新一次天气
+const int UPDATE_CURR_INTERVAL_SECS = 30 * 59; // 30分钟更新一次粉丝数
 
 const int I2C_DISPLAY_ADDRESS = 0x3c;  //I2c地址默认
 #if defined(ESP8266)
@@ -129,6 +129,8 @@ void setup() {
 void loop() {
   if (first) {  //首次加载
     updateDatas(&display);
+    timeSinceLastWUpdate = millis();        // ✅更改点：初始化天气更新时间戳
+    timeSinceLastCurrUpdate = millis();     // ✅更改点：初始化粉丝更新时间戳
     first = false;
   }
   if (millis() - timeSinceLastWUpdate > (1000L * UPDATE_INTERVAL_SECS)) { //屏幕刷新
@@ -140,7 +142,10 @@ void loop() {
     fans = String(currentWeather.follower);
     timeSinceLastCurrUpdate = millis();
   }
-  if (readyForWeatherUpdate && ui.getUiState()->frameState == FIXED) { //天气更新
+  // if (readyForWeatherUpdate && ui.getUiState()->frameState == FIXED) { //天气更新
+  // ✅更改为：只要设置了ready，就更新
+  if (readyForWeatherUpdate) {
+    Serial.println("Ready for weather update");  // ✅调试输出
     updateData();
   }
 
@@ -238,9 +243,12 @@ void drawProgress(OLEDDisplay *display, int percentage, String label) {    //绘
 }
 
 void updateData(void) {  //天气更新
+  Serial.println("[Weather] Updating current...");
   HeFengClient.doUpdateCurr(&currentWeather, HEFENG_KEY, HEFENG_LOCATION);
-  delay(1500);  // <== 关键：延迟1.5秒再发第二个请求
+  delay(1500);
+  Serial.println("[Weather] Updating forecast...");
   HeFengClient.doUpdateFore(foreWeather, HEFENG_KEY, HEFENG_LOCATION);
+  Serial.println("[Weather] Done.");
   readyForWeatherUpdate = false;
 }
 
