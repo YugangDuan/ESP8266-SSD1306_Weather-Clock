@@ -37,6 +37,12 @@ bool HeFeng::fetchBuffer(const char *url)
                     if (size)
                     {
                         int c = client->readBytes(buff, ((size > sizeof(buff)) ? sizeof(buff) : size));
+                        // **新增判断写入长度，防止越界**
+                        if (offset + c > sizeof(_buffer)) {
+                            Serial.println("Warning: buffer overflow prevented");
+                            c = sizeof(_buffer) - offset; // 剩余可写空间
+                            if (c <= 0) break; // 已满，跳出循环
+                        }
                         memcpy(_buffer + offset, buff, sizeof(uint8_t) * c);
                         offset += c;
                         if (len > 0)
@@ -63,7 +69,7 @@ bool HeFeng::fetchBuffer(const char *url)
 
 void HeFeng::doUpdateCurr(HeFengCurrentData *data, String key, String location) {  //获取天气
 
-  String url = "https://ng5khugp4m.re.qweatherapi.com/v7/weather/now?lang=en&gzip=n&location=" + location + "&key=" + key;
+  String url = "https://ng5khugp4m.re.qweatherapi.com/v7/weather/now?lang=en&gzip=y&location=" + location + "&key=" + key;
   Serial.print("[HTTPS] begin...now\n");
   fetchBuffer(url.c_str()); // HTTPS获取数据流
   if (_bufferSize){
@@ -114,7 +120,7 @@ void HeFeng::doUpdateCurr(HeFengCurrentData *data, String key, String location) 
 
 void HeFeng::doUpdateFore(HeFengForeData *data, String key, String location) {  //获取预报
 
-  String url = "https://ng5khugp4m.re.qweatherapi.com/v7/weather/3d?lang=en&gzip=n&location=" + location + "&key=" + key;
+  String url = "https://ng5khugp4m.re.qweatherapi.com/v7/weather/3d?lang=en&gzip=y&location=" + location + "&key=" + key;
   Serial.print("[HTTPS] begin...forecast\n");
   fetchBuffer(url.c_str()); // HTTPS获取数据流
   if (_bufferSize){
